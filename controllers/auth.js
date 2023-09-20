@@ -8,7 +8,7 @@ exports.registerPatient = async (req, res, next) => {
 
     if (user) {
       return res.status(400).json({
-        message: "User with that email already exists!",
+      error: "User with that email already exists!",
       });
     }
 
@@ -23,7 +23,7 @@ exports.registerPatient = async (req, res, next) => {
     });
 
     return res.status(200).json({
-      message: "User successfully created Please login!",
+      message: "success",
     });
   } catch {
     return res.status(500).json({
